@@ -1,2 +1,2 @@
-# CRUD-neurom-rfico
+# CRUD neuromórfico
 Es un trabajo
