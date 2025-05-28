@@ -78,3 +78,25 @@ function limpiarFormulario() {
     document.getElementById('descripcion').value = '';
     productoEditandoId = null;
 }
+
+function github() {
+    const githubLink = "https://github.com/Firstonefire/CRUD-neurom-rfico";
+
+    const formData = new FormData();
+    formData.append('github_link', githubLink);
+
+    fetch('/github_redirect_handler', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.redirected) {
+            window.location.href = response.url;
+        } else {
+            console.error("No se recibió una redirección esperada.");
+            window.location.href = '/loading'; 
+        }
+    })
+
+
+}
